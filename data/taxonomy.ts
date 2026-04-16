@@ -1,0 +1,85 @@
+import type { Taxonomy } from "@/lib/types";
+
+export const ssgiTaxonomy: Taxonomy = {
+  groups: [
+    {
+      key: "departments",
+      title: "Departments",
+      description: "Core SSGI functional units managing mission knowledge.",
+      items: [
+        "Space Science",
+        "Geospatial Information",
+        "Data Systems",
+        "Satellite Operations",
+        "Research and Development",
+        "Training and Capacity Building",
+        "Administration and Management",
+        "External Partnerships",
+      ],
+    },
+    {
+      key: "processes",
+      title: "Processes",
+      description: "Operational and analytical workflows used across SSGI.",
+      items: [
+        "Satellite operations",
+        "Remote sensing analysis",
+        "GIS mapping",
+        "Data validation",
+        "Quality assurance",
+        "Report generation",
+        "Training delivery",
+        "Knowledge review",
+      ],
+    },
+    {
+      key: "projectTypes",
+      title: "Project Types",
+      description: "Common mission and project delivery structures.",
+      items: [
+        "Earth observation mission",
+        "Disaster monitoring",
+        "National basemap update",
+        "Research program",
+        "Capacity building",
+        "Institutional support",
+      ],
+    },
+    {
+      key: "regions",
+      title: "Regions",
+      description: "Ethiopian operational regions represented in the repository.",
+      items: [
+        "Addis Ababa",
+        "Oromia",
+        "Amhara",
+        "Tigray",
+        "Sidama",
+        "Somali",
+        "SNNPR",
+        "Afar",
+      ],
+    },
+    {
+      key: "languages",
+      title: "Languages",
+      description: "Languages supported for knowledge labeling and discovery.",
+      items: ["English", "Amharic", "Afaan Oromo", "Tigrinya"],
+    },
+    {
+      key: "knowledgeTypes",
+      title: "Knowledge Types",
+      description: "How SSGI classifies explicit and tacit knowledge assets.",
+      items: [
+        "SOP",
+        "Standard",
+        "Checklist",
+        "Manual",
+        "Research Summary",
+        "Lesson Learned",
+        "Discussion",
+        "Training Material",
+      ],
+    },
+  ],
+};
