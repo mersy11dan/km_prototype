@@ -352,10 +352,12 @@ export function RepositoryPage({ initialQuery = "" }: { initialQuery?: string })
     [data.documents, filters, role],
   );
 
+  const recordedQuery = useRef("");
+
   useEffect(() => {
-    if (initialQuery) {
-      recordSearch(initialQuery, "repository");
-    }
+    if (!initialQuery || recordedQuery.current === initialQuery) return;
+    recordedQuery.current = initialQuery;
+    recordSearch(initialQuery, "repository");
   }, [initialQuery, recordSearch]);
 
   const categories = unique(data.documents.map((item) => item.category));
@@ -498,10 +500,12 @@ export function DocumentDetailPage({ id }: { id: string }) {
   const { data, incrementDocumentView, approveDocument, canManageReviews } = useAppState();
   const document = data.documents.find((item) => item.id === id);
 
+  const countedViewId = useRef<string | null>(null);
+
   useEffect(() => {
-    if (document) {
-      incrementDocumentView(document.id, "view");
-    }
+    if (!document || countedViewId.current === document.id) return;
+    countedViewId.current = document.id;
+    incrementDocumentView(document.id, "view");
   }, [document, incrementDocumentView]);
 
   if (!document) {
